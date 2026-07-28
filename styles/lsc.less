@@ -1,0 +1,560 @@
+/**
+ * @file plugins/themes/lscTheme/styles/lsc.less
+ *
+ * Layout & component styles inspired by Literary Studies Conference (lscusd.id).
+ * Loaded after the default theme stylesheet variables are overridden.
+ */
+
+// ---------------------------------------------------------------------------
+// Global
+// ---------------------------------------------------------------------------
+
+body {
+	font-family: @font;
+	color: @text-light;
+	background: @bg;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: @font-heading;
+	color: @text;
+	font-weight: 600;
+	letter-spacing: 0.01em;
+}
+
+a {
+	color: @lsc-link;
+	transition: color 0.2s ease, border-color 0.2s ease;
+
+	&:hover,
+	&:focus {
+		color: @lsc-forest;
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Header — white, slim, logo left / nav right (LSC pattern)
+// ---------------------------------------------------------------------------
+
+.pkp_structure_head {
+	background-color: #fff !important;
+	border-bottom: 1px solid @bg-border-color;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+}
+
+.pkp_head_wrapper {
+	max-width: @screen-lg-desktop-container;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: @double;
+	padding-right: @double;
+}
+
+.pkp_site_name {
+	color: @lsc-forest;
+
+	.is_text {
+		color: @lsc-forest !important;
+		font-family: @font-heading;
+		font-weight: 700;
+		font-size: 1.15rem;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	.is_img img {
+		max-height: 56px;
+	}
+}
+
+.pkp_site_nav_menu {
+	background: #fff !important;
+}
+
+.pkp_navigation_primary {
+	a {
+		color: @lsc-nav !important;
+		font-family: @font-heading;
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		padding: 0.5rem 0.75rem;
+
+		&:hover,
+		&:focus {
+			color: @lsc-forest !important;
+			background: transparent;
+		}
+	}
+
+	> li.current > a,
+	> li > a:hover {
+		border-bottom: 2px solid @lsc-accent;
+	}
+}
+
+.pkp_navigation_user {
+	a {
+		color: @text-light !important;
+		font-family: @font-heading;
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+
+		&:hover {
+			color: @lsc-link !important;
+		}
+	}
+}
+
+.pkp_search {
+	color: @lsc-nav !important;
+
+	&:hover {
+		color: @lsc-forest !important;
+	}
+}
+
+// Mobile toggle
+.pkp_site_nav_toggle {
+	span,
+	span:before,
+	span:after {
+		background: @lsc-forest !important;
+	}
+}
+
+// Desktop header: logo + nav on one row
+@media (min-width: @screen-desktop) {
+	.pkp_head_wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		min-height: 75px;
+		padding-top: @base;
+		padding-bottom: @base;
+	}
+
+	.pkp_site_name_wrapper {
+		position: relative;
+		flex: 0 0 auto;
+		height: auto;
+	}
+
+	.pkp_site_name {
+		position: static;
+		left: auto;
+		right: auto;
+		padding-left: 0;
+		white-space: normal;
+	}
+
+	.pkp_site_nav_menu {
+		position: static;
+		width: auto;
+		padding: 0;
+		flex: 1 1 auto;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.pkp_navigation_primary_row {
+		float: none;
+	}
+
+	.pkp_navigation_user_wrapper {
+		position: absolute;
+		top: 0.35rem;
+		right: @double;
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Main content — centered, generous whitespace
+// ---------------------------------------------------------------------------
+
+.pkp_structure_content {
+	max-width: @screen-lg-desktop-container;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.pkp_structure_main {
+	padding-top: @triple;
+	padding-bottom: @triple;
+}
+
+.page {
+	h1 {
+		font-family: @font-heading;
+		color: @lsc-forest;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+		font-size: 1.6rem;
+		text-align: center;
+		margin-bottom: @double;
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Journal homepage — LSC-inspired hero + sections
+// ---------------------------------------------------------------------------
+
+.page_index_journal {
+	text-align: center;
+
+	.lsc_hero {
+		padding: @double 0 @triple;
+		margin-bottom: @double;
+
+		.lsc_hero_eyebrow {
+			font-family: @font-heading;
+			font-size: 0.85rem;
+			font-weight: 600;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: @lsc-accent;
+			margin: 0 0 @base;
+		}
+
+		.lsc_hero_title {
+			font-family: @font-heading;
+			font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+			font-weight: 600;
+			color: @lsc-forest;
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+			line-height: 1.35;
+			margin: 0 0 @base;
+		}
+
+		.lsc_hero_subtitle {
+			font-family: @font;
+			font-size: 1.05rem;
+			color: @text-light;
+			margin: 0 auto @double;
+			max-width: 36em;
+			line-height: 1.6;
+		}
+	}
+
+	.homepage_image {
+		margin: 0 auto @triple;
+		max-width: 920px;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border-radius: 0;
+			box-shadow: none;
+		}
+	}
+
+	.homepage_about,
+	.current_issue,
+	.additional_content,
+	.cmp_announcements {
+		text-align: left;
+		max-width: 48rem;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: @double;
+		padding-bottom: @double;
+		border-top: 1px dotted fade(@lsc-accent, 45%);
+
+		h2 {
+			font-family: @font-heading;
+			font-size: 1rem;
+			font-weight: 700;
+			letter-spacing: 0.14em;
+			text-transform: uppercase;
+			color: @lsc-accent;
+			text-align: center;
+			margin-bottom: @double;
+		}
+	}
+
+	.homepage_about {
+		p {
+			font-size: 1.05rem;
+			line-height: 1.85;
+			color: @text;
+			text-align: justify;
+		}
+	}
+
+	.current_issue_title {
+		font-family: @font-heading;
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: @lsc-forest;
+		text-align: center;
+		margin-bottom: @double;
+	}
+
+	.read_more {
+		display: inline-block;
+		margin-top: @double;
+		font-family: @font-heading;
+		font-size: 0.8rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: @lsc-nav;
+		border-bottom: 1px solid fade(@lsc-nav, 40%);
+		text-decoration: none;
+
+		&:hover {
+			color: @lsc-forest;
+			border-bottom-color: @lsc-forest;
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Issue TOC / articles
+// ---------------------------------------------------------------------------
+
+.obj_issue_toc {
+	.section h2,
+	.galleys_links h2,
+	.pub_id h2 {
+		font-family: @font-heading;
+		color: @lsc-accent;
+		font-size: 0.95rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		border-bottom: 1px dotted fade(@lsc-accent, 40%);
+		padding-bottom: @half;
+	}
+
+	.obj_article_summary {
+		.title {
+			font-family: @font-heading;
+			font-weight: 600;
+			color: @text;
+
+			a {
+				color: @text;
+
+				&:hover {
+					color: @lsc-link;
+				}
+			}
+		}
+
+		.meta,
+		.authors {
+			color: @text-light;
+			font-size: @font-sml;
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Article detail
+// ---------------------------------------------------------------------------
+
+.page_article {
+	.page_header {
+		h1 {
+			color: @lsc-forest;
+			text-transform: none;
+			letter-spacing: 0.01em;
+			font-size: 1.85rem;
+			text-align: left;
+		}
+	}
+
+	.authors {
+		.name {
+			font-family: @font-heading;
+			font-weight: 600;
+			color: @lsc-green;
+		}
+	}
+
+	.main_entry {
+		h2, h3 {
+			color: @lsc-accent;
+			font-size: 0.95rem;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Buttons / CTAs
+// ---------------------------------------------------------------------------
+
+.cmp_button,
+a.cmp_button,
+.obj_galley_link {
+	font-family: @font-heading;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	font-size: 0.75rem;
+	background: @lsc-forest;
+	border-color: @lsc-forest;
+	color: #fff !important;
+	border-radius: 2px;
+	transition: background 0.2s ease, transform 0.15s ease;
+
+	&:hover,
+	&:focus {
+		background: @lsc-green;
+		border-color: @lsc-green;
+		color: #fff !important;
+	}
+}
+
+.obj_galley_link {
+	background: transparent;
+	color: @lsc-nav !important;
+	border: 1px solid @lsc-nav;
+
+	&:hover {
+		background: @lsc-nav;
+		color: #fff !important;
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Sidebar
+// ---------------------------------------------------------------------------
+
+.pkp_structure_sidebar {
+	.pkp_block {
+		border-top: 1px dotted fade(@lsc-accent, 40%);
+		padding-top: @double;
+
+		.title {
+			font-family: @font-heading;
+			font-size: 0.8rem;
+			font-weight: 700;
+			letter-spacing: 0.12em;
+			text-transform: uppercase;
+			color: @lsc-accent;
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Footer — dark like LSC
+// ---------------------------------------------------------------------------
+
+.pkp_structure_footer_wrapper {
+	background: @lsc-footer-bg !important;
+	color: @lsc-footer-text;
+	border-top: none;
+	margin-top: @quadruple;
+	padding-top: @triple;
+	padding-bottom: @triple;
+}
+
+.pkp_structure_footer {
+	max-width: @screen-lg-desktop-container;
+	margin: 0 auto;
+	text-align: center;
+	font-size: @font-sml;
+	line-height: 1.7;
+
+	a {
+		color: lighten(@lsc-nav, 15%);
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+.pkp_footer_content {
+	color: @lsc-footer-text;
+	margin-bottom: @double;
+}
+
+.pkp_brand_footer {
+	opacity: 0.55;
+
+	img {
+		filter: grayscale(1) brightness(1.4);
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Breadcrumbs & misc pages
+// ---------------------------------------------------------------------------
+
+.cmp_breadcrumbs {
+	font-family: @font-heading;
+	font-size: 0.75rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: @text-light;
+
+	a {
+		color: @lsc-nav;
+	}
+}
+
+.page_about,
+.page_contact,
+.page_announcement,
+.page_issue,
+.page_search,
+.page_index_site {
+	h1 {
+		color: @lsc-forest;
+	}
+}
+
+// Announcements list on homepage
+.cmp_announcements {
+	.obj_announcement_summary {
+		h3, .title {
+			font-family: @font-heading;
+			color: @lsc-green;
+
+			a {
+				color: @lsc-green;
+
+				&:hover {
+					color: @lsc-forest;
+				}
+			}
+		}
+
+		.date {
+			color: @lsc-accent;
+			font-size: @font-sml;
+			font-weight: 600;
+		}
+	}
+}
+
+// Subtle reveal on scroll (paired with js/main.js)
+.lsc_reveal {
+	opacity: 0;
+	transform: translateY(12px);
+	transition: opacity 0.55s ease, transform 0.55s ease;
+
+	&.is_visible {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.lsc_reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}

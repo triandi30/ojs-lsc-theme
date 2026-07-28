@@ -1,0 +1,47 @@
+/**
+ * @file plugins/themes/lscTheme/styles/colors.less
+ *
+ * Colour & typography tokens inspired by https://lscusd.id/
+ * These override the default theme's variables.less before compile.
+ */
+
+// Backgrounds
+@bg: #ffffff;
+@bg-shade: #f0f0f0;
+@bg-base: #ffffff; // White header like LSC (not coloured bar)
+
+// Primary green (links / accents) — LSC link green
+@primary: #119300;
+@primary-lift: #18A529;
+
+// Semantic
+@yes: #128400;
+@no: #c0392b;
+
+// Text
+@text: #333333;
+@text-light: #777777;
+@text-bg-base: #145F03; // Used for logo/title text on white header
+
+// Borders — soft, academic
+@bg-border-color: #e5e5e5;
+@bg-base-border-color: rgba(20, 95, 3, 0.12);
+
+// LSC palette extras
+@lsc-forest: #145F03;
+@lsc-green: #128400;
+@lsc-nav: #18A529;
+@lsc-link: #119300;
+@lsc-accent: #993300; // Bronze — section labels (overridable via theme option)
+@lsc-muted-green: #339966;
+@lsc-footer-bg: #111111;
+@lsc-footer-text: #bbbbbb;
+
+// Typography — Raleway (display) + Open Sans (body)
+@font: "Open Sans", Helvetica, Arial, sans-serif;
+@font-heading: "Raleway", Helvetica, Arial, sans-serif;
+@font-site-title: @font-heading;
+
+// Slightly larger body for literary/academic reading
+@font-base: 1.05rem;
+@line-base-large: 1.85rem;
