@@ -1,0 +1,399 @@
+/**
+ * LSC look for OJS — v3
+ * Pin this file (not @main) to avoid jsDelivr stale cache:
+ * https://cdn.jsdelivr.net/gh/triandi30/ojs-lsc-theme@main/cdn/lsc-ojs.v3.css
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@500;600;700&display=swap");
+
+:root {
+	--lsc-forest: #145f03;
+	--lsc-green: #128400;
+	--lsc-nav: #18a529;
+	--lsc-link: #119300;
+	--lsc-accent: #993300;
+	--lsc-text: #333333;
+	--lsc-body: #516b54;
+	--lsc-muted: #777777;
+	--lsc-footer-bg: #111111;
+	--lsc-footer-text: #bbbbbb;
+	--lsc-border: #e5e5e5;
+	--lsc-font: "Open Sans", Helvetica, Arial, sans-serif;
+	--lsc-font-heading: "Raleway", Helvetica, Arial, sans-serif;
+	--lsc-content: 1000px;
+}
+
+/* Do NOT style all headings globally — that fights .lsc-home__title */
+body.lsc_cdn,
+body.pkp_page_index {
+	font-family: var(--lsc-font) !important;
+	background: #fff !important;
+	-webkit-font-smoothing: antialiased;
+}
+
+body.lsc_cdn a {
+	color: var(--lsc-link);
+}
+
+body.lsc_cdn .pkp_structure_head {
+	background: #fff !important;
+	border-bottom: 1px solid var(--lsc-border) !important;
+	box-shadow: none !important;
+}
+
+body.lsc_cdn .pkp_site_nav_menu {
+	background: #fff !important;
+}
+
+body.lsc_cdn .pkp_site_name .is_text {
+	color: var(--lsc-forest) !important;
+	font-family: var(--lsc-font-heading) !important;
+	font-weight: 700 !important;
+	text-transform: uppercase;
+}
+
+body.lsc_cdn .pkp_site_name .is_img img {
+	max-height: 56px !important;
+}
+
+body.lsc_cdn .pkp_navigation_primary a {
+	color: #999 !important;
+	font-family: var(--lsc-font-heading) !important;
+	font-size: 13px !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	background: transparent !important;
+}
+
+body.lsc_cdn .pkp_navigation_primary a:hover,
+body.lsc_cdn .pkp_navigation_primary > li.current > a {
+	color: var(--lsc-nav) !important;
+}
+
+body.lsc_cdn .pkp_structure_footer_wrapper {
+	background: var(--lsc-footer-bg) !important;
+	color: var(--lsc-footer-text) !important;
+	border: 0 !important;
+	margin-top: 3rem;
+	padding: 2rem 0;
+	text-align: center;
+}
+
+/* Layout when LSC homepage is present — CSS-only, no JS required */
+.pkp_page_index:has(#lsc-home) .pkp_structure_sidebar,
+body:has(#lsc-home) .pkp_structure_sidebar {
+	display: none !important;
+}
+
+.pkp_page_index:has(#lsc-home) .pkp_structure_main,
+body:has(#lsc-home) .pkp_structure_main {
+	float: none !important;
+	width: 100% !important;
+	max-width: none !important;
+	padding-left: 16px !important;
+	padding-right: 16px !important;
+}
+
+.pkp_page_index:has(#lsc-home) .pkp_structure_content {
+	max-width: none !important;
+	width: 100% !important;
+}
+
+.pkp_page_index:has(#lsc-home) .homepage_about,
+.pkp_page_index:has(#lsc-home) .homepage_image {
+	display: none !important;
+}
+
+.pkp_page_index:has(#lsc-home) .additional_content {
+	max-width: none !important;
+	width: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	background: transparent !important;
+}
+
+/* ---- LSC homepage block ---- */
+#lsc-home.lsc-home,
+#lsc-home,
+.lsc-home {
+	box-sizing: border-box !important;
+	display: block !important;
+	width: 100% !important;
+	max-width: var(--lsc-content) !important;
+	margin: 12px auto 48px !important;
+	padding: 0 8px !important;
+	text-align: center !important;
+	font-family: var(--lsc-font) !important;
+	color: var(--lsc-body) !important;
+	background: #fff !important;
+	float: none !important;
+	clear: both !important;
+}
+
+#lsc-home *,
+.lsc-home * {
+	box-sizing: border-box;
+}
+
+#lsc-home .lsc-home__hero,
+.lsc-home__hero {
+	padding: 8px 0 4px !important;
+	text-align: center !important;
+}
+
+#lsc-home .lsc-home__title,
+.lsc-home__title,
+h2.lsc-home__title {
+	margin: 0 0 10px !important;
+	padding: 0 !important;
+	font-family: var(--lsc-font-heading) !important;
+	font-size: 29px !important;
+	font-weight: 600 !important;
+	line-height: 1.25 !important;
+	letter-spacing: 0.02em !important;
+	text-transform: uppercase !important;
+	color: #145f03 !important;
+	text-align: center !important;
+	border: 0 !important;
+	background: none !important;
+}
+
+#lsc-home .lsc-home__meta,
+.lsc-home__meta,
+p.lsc-home__meta {
+	margin: 0 !important;
+	padding: 0 !important;
+	font-family: var(--lsc-font) !important;
+	font-size: 16px !important;
+	font-weight: 700 !important;
+	line-height: 1.5 !important;
+	color: #993300 !important;
+	text-align: center !important;
+}
+
+#lsc-home .lsc-home__theme,
+.lsc-home__theme,
+h3.lsc-home__theme {
+	margin: 18px 0 22px !important;
+	padding: 0 !important;
+	font-family: var(--lsc-font-heading) !important;
+	font-size: 32px !important;
+	font-weight: 600 !important;
+	line-height: 1.3 !important;
+	color: #333333 !important;
+	text-align: center !important;
+	text-transform: none !important;
+	letter-spacing: 0 !important;
+	border: 0 !important;
+	background: none !important;
+}
+
+#lsc-home .lsc-home__theme span {
+	display: block !important;
+	color: #333333 !important;
+}
+
+#lsc-home .lsc-home__banner,
+.lsc-home__banner {
+	display: block !important;
+	margin: 8px auto 28px !important;
+	padding: 0 !important;
+	max-width: 1000px !important;
+	border: 0 !important;
+	background: none !important;
+}
+
+#lsc-home .lsc-home__banner img,
+.lsc-home__banner img {
+	display: block !important;
+	width: 100% !important;
+	max-width: 1000px !important;
+	height: auto !important;
+	margin: 0 auto !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+}
+
+#lsc-home .lsc-home__intro,
+.lsc-home__intro {
+	margin: 0 auto 8px !important;
+	padding: 0 !important;
+	text-align: justify !important;
+	border: 0 !important;
+}
+
+#lsc-home .lsc-home__intro p,
+.lsc-home__intro p {
+	margin: 0 0 18px !important;
+	padding: 0 !important;
+	font-family: var(--lsc-font) !important;
+	font-size: 15px !important;
+	line-height: 1.7 !important;
+	color: #516b54 !important;
+	text-align: justify !important;
+}
+
+#lsc-home .lsc-home__section,
+.lsc-home__section {
+	margin: 0 !important;
+	padding: 28px 0 8px !important;
+	border-top: 1px dotted rgba(153, 51, 0, 0.55) !important;
+	text-align: left !important;
+	background: transparent !important;
+}
+
+#lsc-home .lsc-home__heading,
+.lsc-home__heading,
+h3.lsc-home__heading {
+	margin: 0 0 28px !important;
+	padding: 0 !important;
+	font-family: var(--lsc-font-heading) !important;
+	font-size: 18px !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.12em !important;
+	text-transform: uppercase !important;
+	color: #993300 !important;
+	text-align: center !important;
+	border: 0 !important;
+	background: none !important;
+}
+
+#lsc-home .lsc-home__speakers,
+.lsc-home__speakers {
+	display: flex !important;
+	flex-wrap: wrap !important;
+	justify-content: center !important;
+	gap: 28px 24px !important;
+	margin: 0 0 28px !important;
+	padding: 0 !important;
+}
+
+#lsc-home .lsc-home__speaker,
+.lsc-home__speaker {
+	width: 200px !important;
+	max-width: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	text-align: center !important;
+	background: transparent !important;
+	border: 0 !important;
+	box-shadow: none !important;
+}
+
+#lsc-home .lsc-home__speaker img,
+.lsc-home__speaker img {
+	display: block !important;
+	width: 172px !important;
+	height: 172px !important;
+	max-width: 100% !important;
+	object-fit: cover !important;
+	margin: 0 auto 12px !important;
+	border-radius: 0 !important;
+	border: 0 !important;
+	box-shadow: none !important;
+}
+
+#lsc-home .lsc-home__speaker h4,
+.lsc-home__speaker h4 {
+	margin: 0 0 6px !important;
+	padding: 0 !important;
+	font-family: "Trebuchet MS", var(--lsc-font-heading), sans-serif !important;
+	font-size: 16px !important;
+	font-weight: 700 !important;
+	line-height: 1.3 !important;
+	text-transform: uppercase !important;
+	color: #128400 !important;
+	border: 0 !important;
+	background: none !important;
+}
+
+#lsc-home .lsc-home__speaker p,
+.lsc-home__speaker p {
+	margin: 0 !important;
+	padding: 0 6px !important;
+	font-size: 13px !important;
+	line-height: 1.45 !important;
+	color: #777777 !important;
+	text-align: center !important;
+}
+
+#lsc-home .lsc-home__cta-wrap,
+.lsc-home__cta-wrap {
+	text-align: center !important;
+	margin: 8px 0 0 !important;
+}
+
+#lsc-home .lsc-home__cta,
+.lsc-home__cta,
+a.lsc-home__cta {
+	display: inline-block !important;
+	font-family: var(--lsc-font-heading) !important;
+	font-size: 14px !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.08em !important;
+	text-transform: uppercase !important;
+	color: #ffffff !important;
+	background: #145f03 !important;
+	padding: 14px 22px !important;
+	text-decoration: none !important;
+	border: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+}
+
+#lsc-home .lsc-home__cta:hover,
+a.lsc-home__cta:hover {
+	background: #128400 !important;
+	color: #ffffff !important;
+}
+
+#lsc-home .lsc-home__list,
+.lsc-home__list {
+	margin: 0 0 14px 1.2em !important;
+	padding: 0 !important;
+	color: #516b54 !important;
+	font-size: 15px !important;
+	line-height: 1.7 !important;
+	text-align: left !important;
+}
+
+#lsc-home .lsc-home__list li {
+	margin: 0 0 6px !important;
+}
+
+#lsc-home .lsc-home__list strong {
+	color: #993300 !important;
+}
+
+#lsc-home .lsc-home__section > p {
+	margin: 0 0 12px !important;
+	font-size: 15px !important;
+	line-height: 1.7 !important;
+	color: #516b54 !important;
+	text-align: justify !important;
+}
+
+@media (max-width: 640px) {
+	#lsc-home .lsc-home__title,
+	.lsc-home__title {
+		font-size: 22px !important;
+	}
+
+	#lsc-home .lsc-home__theme,
+	.lsc-home__theme {
+		font-size: 22px !important;
+	}
+
+	#lsc-home .lsc-home__speaker {
+		width: 46% !important;
+	}
+
+	#lsc-home .lsc-home__speaker img {
+		width: 100% !important;
+		height: auto !important;
+		aspect-ratio: 1 / 1;
+	}
+}
