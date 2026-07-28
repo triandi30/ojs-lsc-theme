@@ -1,6 +1,5 @@
 /**
- * LSC CDN helpers for OJS Default Theme
- * https://cdn.jsdelivr.net/gh/triandi30/ojs-lsc-theme@main/cdn/lsc-ojs.js
+ * LSC CDN helpers for OJS — v2
  */
 (function () {
 	'use strict';
@@ -13,14 +12,22 @@
 	onReady(function () {
 		document.body.classList.add('lsc_cdn');
 
-		var nodes = document.querySelectorAll(
-			'.page_index_journal .homepage_about, ' +
-			'.page_index_journal .current_issue, ' +
-			'.page_index_journal .additional_content, ' +
-			'.page_index_journal .cmp_announcements, ' +
-			'.page_index_journal .homepage_image'
-		);
+		var home = document.getElementById('lsc-home') || document.querySelector('.lsc-home');
+		if (home) {
+			document.body.classList.add('has_lsc_home');
 
+			// Move LSC block to top of journal homepage content
+			var page = document.querySelector('.page_index_journal');
+			if (page && home.parentElement !== page) {
+				page.insertBefore(home, page.firstChild);
+			} else if (page && page.firstChild !== home) {
+				page.insertBefore(home, page.firstChild);
+			}
+		}
+
+		var nodes = document.querySelectorAll(
+			'.lsc-home__intro, .lsc-home__section, .lsc-home__banner'
+		);
 		if (!nodes.length || !('IntersectionObserver' in window)) return;
 
 		nodes.forEach(function (el) {
@@ -36,7 +43,7 @@
 					}
 				});
 			},
-			{ rootMargin: '0px 0px -8% 0px', threshold: 0.12 }
+			{ rootMargin: '0px 0px -6% 0px', threshold: 0.1 }
 		);
 
 		nodes.forEach(function (el) {
