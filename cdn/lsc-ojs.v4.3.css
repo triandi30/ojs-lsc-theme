@@ -1,0 +1,438 @@
+/**
+ * LSC look for OJS — v4.3
+ * Adds Conference Information sidebar menu styles.
+ * https://cdn.jsdelivr.net/gh/triandi30/ojs-lsc-theme@main/cdn/lsc-ojs.v4.3.css
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@500;600;700&display=swap");
+
+:root {
+	--lsc-forest: #145f03;
+	--lsc-green: #128400;
+	--lsc-nav: #18a529;
+	--lsc-link: #119300;
+	--lsc-accent: #993300;
+	--lsc-text: #333333;
+	--lsc-body: #516b54;
+	--lsc-muted: #777777;
+	--lsc-font: "Open Sans", Helvetica, Arial, sans-serif;
+	--lsc-font-heading: "Raleway", Helvetica, Arial, sans-serif;
+}
+
+body.pkp_page_index {
+	font-family: var(--lsc-font);
+	background: #fff;
+}
+
+.pkp_structure_head,
+.pkp_head_wrapper,
+.pkp_site_nav_menu,
+.pkp_navigation_primary_row,
+.pkp_navigation_primary_wrapper {
+	background: #ffffff !important;
+	background-color: #ffffff !important;
+}
+
+.pkp_structure_head {
+	border-bottom: 1px solid #e5e5e5 !important;
+	box-shadow: none !important;
+}
+
+.pkp_site_nav_menu,
+.pkp_navigation_primary,
+.pkp_navigation_primary_row {
+	background: #ffffff !important;
+	background-color: #ffffff !important;
+	border: 0 !important;
+	box-shadow: none !important;
+}
+
+.pkp_navigation_primary > li > a,
+.pkp_navigation_user a,
+.pkp_search {
+	background: transparent !important;
+}
+
+.pkp_site_name .is_img img {
+	max-height: 56px !important;
+}
+
+.pkp_navigation_primary > li > a {
+	color: #18a529 !important;
+	font-family: var(--lsc-font-heading);
+	font-size: 13px !important;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.pkp_navigation_primary > li > a:hover,
+.pkp_navigation_primary > li.current > a {
+	color: #145f03 !important;
+}
+
+.pkp_structure_footer_wrapper {
+	background: #111 !important;
+	color: #bbb !important;
+	border: 0 !important;
+}
+
+.pkp_page_index:has(#lsc-home) .homepage_about {
+	display: none !important;
+}
+
+.pkp_page_index:has(#lsc-home) .additional_content {
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	background: transparent !important;
+}
+
+.pkp_page_index:has(#lsc-home) .pkp_structure_content {
+	padding-top: 12px !important;
+}
+
+@media (min-width: 992px) {
+	.pkp_page_index:has(#lsc-home) .pkp_structure_content.has_sidebar {
+		display: flex !important;
+		flex-direction: row !important;
+		align-items: flex-start !important;
+		justify-content: space-between !important;
+		gap: 24px !important;
+		width: 100% !important;
+		max-width: 1160px !important;
+		box-sizing: border-box !important;
+	}
+
+	.pkp_page_index:has(#lsc-home) .pkp_structure_main {
+		float: none !important;
+		width: auto !important;
+		max-width: none !important;
+		flex: 1 1 0 !important;
+		min-width: 0 !important;
+		padding-top: 0 !important;
+	}
+
+	.pkp_page_index:has(#lsc-home) .pkp_structure_main:before,
+	.pkp_page_index:has(#lsc-home) .pkp_structure_main:after {
+		display: none !important;
+		content: none !important;
+		width: 0 !important;
+	}
+
+	.pkp_page_index:has(#lsc-home) .pkp_structure_sidebar {
+		float: none !important;
+		clear: none !important;
+		width: 280px !important;
+		max-width: 280px !important;
+		flex: 0 0 280px !important;
+		margin: 0 !important;
+		padding-top: 0 !important;
+		position: relative !important;
+		top: 0 !important;
+	}
+}
+
+#lsc-home {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0 0 1.5rem;
+	padding: 0;
+	text-align: center;
+	font-family: var(--lsc-font);
+	color: var(--lsc-body);
+	background: transparent;
+}
+
+#lsc-home * {
+	box-sizing: border-box;
+}
+
+#lsc-home .lsc-home__hero {
+	padding: 0;
+	text-align: center;
+}
+
+#lsc-home .lsc-home__title,
+#lsc-home h2.lsc-home__title {
+	margin: 0 0 0.5rem !important;
+	padding: 0 !important;
+	font-family: var(--lsc-font-heading) !important;
+	font-size: 1.65rem !important;
+	font-weight: 600 !important;
+	line-height: 1.3 !important;
+	letter-spacing: 0.02em;
+	text-transform: uppercase !important;
+	color: #145f03 !important;
+	text-align: center !important;
+	border: 0 !important;
+	background: none !important;
+}
+
+#lsc-home .lsc-home__meta,
+#lsc-home p.lsc-home__meta {
+	margin: 0 !important;
+	padding: 0 !important;
+	font-size: 0.95rem !important;
+	font-weight: 700 !important;
+	line-height: 1.45 !important;
+	color: #993300 !important;
+	text-align: center !important;
+}
+
+#lsc-home .lsc-home__theme,
+#lsc-home h3.lsc-home__theme {
+	margin: 0.9rem 0 1rem !important;
+	padding: 0 !important;
+	font-family: var(--lsc-font-heading) !important;
+	font-size: 1.45rem !important;
+	font-weight: 600 !important;
+	line-height: 1.3 !important;
+	color: #333 !important;
+	text-align: center !important;
+	text-transform: none !important;
+	border: 0 !important;
+	background: none !important;
+}
+
+#lsc-home .lsc-home__theme span {
+	display: block;
+	color: #333 !important;
+}
+
+#lsc-home .lsc-home__banner {
+	display: block;
+	margin: 0.75rem auto 1.25rem;
+	padding: 0;
+	border: 0;
+	max-width: 100%;
+}
+
+#lsc-home .lsc-home__banner img {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+#lsc-home .lsc-home__intro {
+	text-align: justify;
+	margin: 0 0 0.5rem;
+}
+
+#lsc-home .lsc-home__intro p {
+	margin: 0 0 1rem !important;
+	font-size: 0.95rem !important;
+	line-height: 1.7 !important;
+	color: #516b54 !important;
+	text-align: justify !important;
+}
+
+#lsc-home .lsc-home__section {
+	margin: 0;
+	padding: 1.35rem 0 0.35rem;
+	border-top: 1px dotted rgba(153, 51, 0, 0.5);
+	text-align: left;
+	background: transparent;
+}
+
+#lsc-home .lsc-home__heading,
+#lsc-home h3.lsc-home__heading {
+	margin: 0 0 1.25rem !important;
+	padding: 0 !important;
+	font-family: var(--lsc-font-heading) !important;
+	font-size: 1rem !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.12em;
+	text-transform: uppercase !important;
+	color: #993300 !important;
+	text-align: center !important;
+	border: 0 !important;
+	background: none !important;
+}
+
+#lsc-home .lsc-home__speakers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1.25rem 1rem;
+	margin: 0 0 1.25rem;
+	padding: 0;
+}
+
+#lsc-home .lsc-home__speaker {
+	width: 160px;
+	max-width: 46%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	background: transparent;
+	border: 0;
+	box-shadow: none;
+}
+
+#lsc-home .lsc-home__speaker img {
+	display: block;
+	width: 140px;
+	height: 140px;
+	max-width: 100%;
+	object-fit: cover;
+	margin: 0 auto 0.65rem;
+	border-radius: 0;
+	border: 0;
+	box-shadow: none;
+}
+
+#lsc-home .lsc-home__speaker h4 {
+	margin: 0 0 0.35rem !important;
+	padding: 0 !important;
+	font-family: "Trebuchet MS", var(--lsc-font-heading), sans-serif !important;
+	font-size: 0.9rem !important;
+	font-weight: 700 !important;
+	line-height: 1.3 !important;
+	text-transform: uppercase !important;
+	color: #128400 !important;
+	border: 0 !important;
+	background: none !important;
+}
+
+#lsc-home .lsc-home__speaker p {
+	margin: 0 !important;
+	padding: 0 0.25rem !important;
+	font-size: 0.78rem !important;
+	line-height: 1.4 !important;
+	color: #777 !important;
+	text-align: center !important;
+}
+
+#lsc-home .lsc-home__cta-wrap {
+	text-align: center;
+	margin: 0.5rem 0 0;
+}
+
+#lsc-home a.lsc-home__cta {
+	display: inline-block !important;
+	font-family: var(--lsc-font-heading) !important;
+	font-size: 0.85rem !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.08em;
+	text-transform: uppercase !important;
+	color: #fff !important;
+	background: #145f03 !important;
+	padding: 0.85rem 1.25rem !important;
+	text-decoration: none !important;
+	border: 0 !important;
+	border-radius: 2px !important;
+	box-shadow: none !important;
+}
+
+#lsc-home a.lsc-home__cta:hover {
+	background: #128400 !important;
+	color: #fff !important;
+}
+
+#lsc-home .lsc-home__list {
+	margin: 0 0 0.85rem 1.1em !important;
+	padding: 0 !important;
+	color: #516b54 !important;
+	font-size: 0.95rem !important;
+	line-height: 1.65 !important;
+	text-align: left !important;
+}
+
+#lsc-home .lsc-home__list li {
+	margin: 0 0 0.35rem !important;
+}
+
+#lsc-home .lsc-home__list strong {
+	color: #993300 !important;
+}
+
+#lsc-home .lsc-home__section > p {
+	margin: 0 0 0.75rem !important;
+	font-size: 0.95rem !important;
+	line-height: 1.7 !important;
+	color: #516b54 !important;
+	text-align: justify !important;
+}
+
+/* ---- Sidebar blocks + Conference Information menu ---- */
+.pkp_structure_sidebar .pkp_block {
+	border-top: 1px dotted rgba(153, 51, 0, 0.45);
+	padding-top: 0.85rem;
+	margin-bottom: 1.25rem;
+}
+
+.pkp_structure_sidebar .pkp_block .title {
+	font-family: var(--lsc-font-heading) !important;
+	font-size: 0.8rem !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.1em;
+	text-transform: uppercase !important;
+	color: #993300 !important;
+	margin: 0 0 0.65rem !important;
+	padding: 0 !important;
+	border: 0 !important;
+	background: none !important;
+}
+
+.pkp_structure_sidebar .conference-menu {
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 1px solid #e8e8e8;
+	background: #fff;
+}
+
+.pkp_structure_sidebar .conference-menu li {
+	margin: 0 !important;
+	padding: 0 !important;
+	border-bottom: 1px solid #eee !important;
+	list-style: none !important;
+}
+
+.pkp_structure_sidebar .conference-menu li:last-child {
+	border-bottom: none !important;
+}
+
+.pkp_structure_sidebar .conference-menu a {
+	display: block !important;
+	padding: 0.7rem 0.85rem !important;
+	font-family: var(--lsc-font) !important;
+	font-size: 0.86rem !important;
+	font-weight: 600 !important;
+	line-height: 1.35 !important;
+	text-decoration: none !important;
+	color: #333 !important;
+	background: transparent !important;
+	border: 0 !important;
+	border-left: 3px solid transparent !important;
+	transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, padding-left 0.2s ease;
+}
+
+.pkp_structure_sidebar .conference-menu a:hover,
+.pkp_structure_sidebar .conference-menu a:focus {
+	background: #f4faf4 !important;
+	color: #145f03 !important;
+	border-left-color: #145f03 !important;
+	padding-left: 1.05rem !important;
+}
+
+@media (max-width: 640px) {
+	#lsc-home .lsc-home__title {
+		font-size: 1.25rem !important;
+	}
+
+	#lsc-home .lsc-home__theme {
+		font-size: 1.15rem !important;
+	}
+
+	#lsc-home .lsc-home__speaker img {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1 / 1;
+	}
+}
