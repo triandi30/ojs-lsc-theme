@@ -2,6 +2,24 @@
 
 Child theme of the OJS **Default Theme**, visually inspired by [Literary Studies Conference / lscusd.id](https://lscusd.id/).
 
+## Cara CDN (tanpa upload plugin / tanpa SSH)
+
+Mirip pemanggilan Font Awesome / jsDelivr — ini **mengubah tampilan Default Theme** lewat CSS/JS remote (bukan instal tema penuh).
+
+1. Install & aktifkan plugin **Custom Header** (Plugin Gallery).
+2. Buka Settings plugin itu, paste:
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/triandi30/ojs-lsc-theme@main/cdn/lsc-ojs.css">
+<script defer src="https://cdn.jsdelivr.net/gh/triandi30/ojs-lsc-theme@main/cdn/lsc-ojs.js"></script>
+```
+
+3. Save, lalu hard-refresh halaman jurnal.
+
+File: [`cdn/lsc-ojs.css`](cdn/lsc-ojs.css), [`cdn/lsc-ojs.js`](cdn/lsc-ojs.js), [`cdn/snippet.html`](cdn/snippet.html).
+
+**Batasan:** tidak bisa ganti struktur template Smarty (hero custom, dsb.) — hanya styling + sedikit JS.
+
 ## Look & feel
 
 | Element | Treatment |
